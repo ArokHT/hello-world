@@ -16,11 +16,11 @@ class transform
 		//int input(double x, string s1, string s2);
 		void inputfind(string s1, string s2);
 //		void whichfind(float x);
-		float lengthcalculate(float x);
-		float weightcalculate(float x);
-		float timecalculate(float x);
-		float pressurecalculate(float x);
-//		float calculate(float x);
+//		float lengthcalculate(float x);
+//		float weightcalculate(float x);
+//		float timecalculate(float x);
+//		float pressurecalculate(float x);
+		float calculate(float x);
 	//private:
 		//int which;
 		float digit;
@@ -165,10 +165,10 @@ void transform::inputfind(string s1, string s2)
 	}
 }
 //float transform::calculate(float x)
-float transform::lengthcalculate(float x)
+float transform::calculate(float x)
 {
-//	if(which==1)
-//	{
+	if(which==1)
+	{
 	string s=oringe+now;
 	//switch(s)
 	//{
@@ -192,11 +192,9 @@ float transform::lengthcalculate(float x)
 		if(s=="41") return x/1000; //break;
 		if(s=="42") return x/100; //break;
 		if(s=="43") return x/10; //break;*/
-		//}
-}
-//	if(which==2)
-float transform::weightcalculate(float x)
-{
+	}
+	if(which==2)
+	{
 	string s=oringe+now;
 	//switch(s)
 	//{
@@ -221,10 +219,9 @@ float transform::weightcalculate(float x)
 		//	if(s=="42") return x/100; //break;
 		//	if(s=="43") return x/10; //break;*/
 		//}
-}
-//	if(which==3)
-float transform::timecalculate(float x)
-{
+	}
+	if(which==3)
+	{
 	string s=oringe+now;
 	//switch(s)
 	//{
@@ -249,9 +246,9 @@ float transform::timecalculate(float x)
 	if(s=="42") return x/(60*1000); //break;
 	if(s=="43") return x/1000; //break;*/
 		//}
-}
-float transform::pressurecalculate(float x)
-{
+	}
+	if(which==6) 
+	{
 	string s=oringe+now;
 	if(s=="01") return x*1000; //break;
 	if(s=="02") return x*145.037744; //break;
@@ -265,9 +262,10 @@ float transform::pressurecalculate(float x)
 	if(s=="30") return x/1000000; //break;
 	if(s=="31") return x/1000; //break;
 	if(s=="32") return x/145.037744; //break;
+	}
 }
 //void transform::whichfind(float x)
-class whichfind:transform//继承
+/*class whichfind:transform
 {
 	public:
 		whichfind(float x, string s1, string s2):transform(x, s1, s2)
@@ -285,7 +283,7 @@ void whichfind::caculate(float x)
 		case 6: printf("%f\n", transform::pressurecalculate(x));break;
 				
 	}
-}
+}*/
 int main()
 {
 	float x;
@@ -293,12 +291,13 @@ int main()
 	cin >> x >> s1 >> s2;
 	transform T(x, s1, s2);
 	T.inputfind(s1, s2);
-	T.lengthcalculate(x);
-	T.weightcalculate(x);
-	T.timecalculate(x);
-	T.pressurecalculate(x);
-	whichfind a(x, s1, s2);
-	a.caculate(x);
+	T.calculate(x);
+	printf("%f\n", T.calculate(x));
+//	T.weightcalculate(x);
+//	T.timecalculate(x);
+//	T.pressurecalculate(x);
+//	whichfind a(x, s1, s2);
+//	a.caculate(x);
 //	T.whichfind(x);
 //	printf("%f\n", T.calculate(x));
 //	cout << T.calculate(x);
