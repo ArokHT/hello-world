@@ -301,7 +301,6 @@ int main()
 //	T.whichfind(x);
 //	printf("%f\n", T.calculate(x));
 //	cout << T.calculate(x);
-//	T.input(x, s1, s2);
 	//cout << T.input(x, s1, s2) << endl;
 	return 0;
 }
