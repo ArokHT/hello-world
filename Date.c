@@ -1,3 +1,4 @@
+#include<stdio.h>
 struct Date {
   int year;
   int month;
@@ -6,10 +7,12 @@ struct Date {
 void next_day(struct Date day);
 void previous_day(struct Date day);
 int equal(struct Date one, struct Date day);
-void show(struct Date day) {
+void show(struct Date day)
+{
   printf();
 }
-int main() {
+int main()
+{
   struct Date today = {2018,3,20};
   struct Date day = {2018,3,20};
   show(day);
