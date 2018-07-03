@@ -1,6 +1,7 @@
+#include<iostream>
+using namespace std;
 class Table {
 public:
-
   void show();
   int addRow();
   void delRow(int n);
@@ -9,11 +10,11 @@ public:
 private:
   Cell cells;
 };
-class Cell {
+class Cell
+{
 public:
   Cell(char con[]);
   ~Cell();
-
   void show();
 private:
   string content;
