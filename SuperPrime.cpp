@@ -1,18 +1,30 @@
-class Prime {
+#include<iostream>
+using namespace std;
+class Prime 
+{
 public:
   Prime(int num);
+  int druge(int num);
   ~Prime();
 
-  bool isPrime();
 private:
   const int mNum;
 };
-class SuperPrime : public Prime {
+Prime::Prime(int num)
+{
+  mNum=num;
+}
+int Prime::druge(int num)
+{
+  //判断素数
+}
+class SuperPrime : public Prime
+{
 public:
   SuperPrime(int num);
   ~SuperPrime();
 
-  bool isPrime();
+  //bool isPrime();
 
   Prime sumBit();
   Prime multiBit();
@@ -23,7 +35,9 @@ private:
 int main()
 {
     SuperPrime sp(113);
-    if(sp.isPrime()) {
-        ; // do something
+    if(sp.isPrime()) 
+    {
+        cout << "yes" << endl; // do something
     }
+  return 0;
 }
